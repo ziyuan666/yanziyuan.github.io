@@ -72,25 +72,13 @@
         
         <li class="nav-item">
           
-          <a class="nav-link" href="/about">关于</a>
-          
-        </li>
-        
-        <li class="nav-item">
-          
-          <a class="nav-link" href="https://yanziyuan.cn/tags">日常</a>
-          
-        </li>
-        
-        <li class="nav-item">
-          
-          <a class="nav-link" href="/fc/index.html">fc小游戏</a>
+          <a class="nav-link" href="/post/about">关于</a>
           
         </li>
         
         <li class="nav-item">
           <div class="gridea-search-container">
-            <form id="gridea-search-form" style="position: relative" data-update="1630809602741"
+            <form id="gridea-search-form" style="position: relative" data-update="1630927371432"
               action="/search/index.html">
               <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
               <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -134,25 +122,13 @@
         
         <li class="nav-item">
           
-          <a class="nav-link" href="/about">关于</a>
-          
-        </li>
-        
-        <li class="nav-item">
-          
-          <a class="nav-link" href="https://yanziyuan.cn/tags">日常</a>
-          
-        </li>
-        
-        <li class="nav-item">
-          
-          <a class="nav-link" href="/fc/index.html">fc小游戏</a>
+          <a class="nav-link" href="/post/about">关于</a>
           
         </li>
         
         <li class="nav-item">
           <div class="gridea-search-container">
-            <form id="gridea-search-form" style="position: relative" data-update="1630809602741"
+            <form id="gridea-search-form" style="position: relative" data-update="1630927371432"
               action="/search/index.html">
               <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
               <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -194,9 +170,10 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto post-content-container">
           
-          <p>第一个是FC游戏机<a href="https://yanziyuan.cn/fc/index.html">https://yanziyuan.cn/fc/index.html</a><br>
+          <p>第一个是FC游戏机[https://yanziyuan.cn/fc/index.html]<br>
 第二个是小游戏平台<a href="https://yanziyuan.cn/pingtia/index.html">https://yanziyuan.cn/pingtia/index.html</a><br>
 第三个是人生重开模拟器<a href="https://yanziyuan.cn/lifeRestart/view/">https://yanziyuan.cn/lifeRestart/view/</a><br>
+第四个是魔方<a href="https://yanziyuan.cn/cuber-master/dist/">https://yanziyuan.cn/cuber-master/dist/</a><br>
 以上点击链接即可进入哦</p>
 
           <div class="toc-container"></div>
@@ -288,47 +265,6 @@
       }
     }
   })(this));</script>
-  
-  <div id="landlord-parent">
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-    </div>
-</div>
-
-<script type="text/javascript">
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-        //移动端
-        console.log("------ 移动端");
-    } else {
-        console.log("------ PC端 " + navigator.userAgent);
-
-        addScript("https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js", () => {
-            // 加载完成后再loadlive2d
-            loadlive2d("live2d", "https://yanziyuan.cn/media/live2d/assets/hijiki.model.json");
-        });
-
-        var home_Path = "https://yanziyuan.cn/";
-        addScript("https://yanziyuan.cn/media/live2d/js/message.js", () => { });
-    }
-
-    // 插入js文件，完成后callback
-    function addScript(jsfile, callback) {
-        var landlord_parent = document.getElementById("landlord-parent");
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = jsfile;
-        landlord_parent.appendChild(script);
-        script.onload = script.onreadystatechange = function () {
-            if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
-                script.onload = script.onreadystatechange = null;
-                if (callback && typeof callback == "function") {
-                    callback(); //window[callback]();如果传递字符串过来 调用window['函数名']() 调用方法
-                }
-            }
-        };
-    }
-</script>
   
   <script src="https://yanziyuan.cn/media/scripts/tocScript.js"></script>
 </body>
