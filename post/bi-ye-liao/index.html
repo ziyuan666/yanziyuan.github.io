@@ -31,7 +31,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
   <meta property="og:description" content="毕业了" />
-  <meta property="og:url" content="https://yanziyuan.cn/post/bi-ye-liao" />
+  <meta property="og:url" content="https://yanziyuan.cn/post/bi-ye-liao/" />
   <meta property="og:locale" content="zh-CN" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="子渊小站" />
@@ -78,7 +78,7 @@
         
         <li class="nav-item">
           <div class="gridea-search-container">
-            <form id="gridea-search-form" style="position: relative" data-update="1636857455315"
+            <form id="gridea-search-form" style="position: relative" data-update="1636858284353"
               action="/search/index.html">
               <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
               <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -128,7 +128,7 @@
         
         <li class="nav-item">
           <div class="gridea-search-container">
-            <form id="gridea-search-form" style="position: relative" data-update="1636857455315"
+            <form id="gridea-search-form" style="position: relative" data-update="1636858284353"
               action="/search/index.html">
               <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
               <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -176,7 +176,7 @@
           
           <hr />
           <p class="next-post">下一篇：
-            <a href="https://yanziyuan.cn/post/niantu">
+            <a href="https://yanziyuan.cn/post/niantu/">
               <span class="post-title">
                 捏了一个惨不忍睹的黏土小道士&rarr;
               </span>
@@ -261,6 +261,47 @@
       }
     }
   })(this));</script>
+  
+  <div id="landlord-parent">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+        //移动端
+        console.log("------ 移动端");
+    } else {
+        console.log("------ PC端 " + navigator.userAgent);
+
+        addScript("https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js", () => {
+            // 加载完成后再loadlive2d
+            loadlive2d("live2d", "https://yanziyuan.cn//media/live2d/assets/tororo.model.json");
+        });
+
+        var home_Path = "https://yanziyuan.cn//";
+        addScript("https://yanziyuan.cn//media/live2d/js/message.js", () => { });
+    }
+
+    // 插入js文件，完成后callback
+    function addScript(jsfile, callback) {
+        var landlord_parent = document.getElementById("landlord-parent");
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = jsfile;
+        landlord_parent.appendChild(script);
+        script.onload = script.onreadystatechange = function () {
+            if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                script.onload = script.onreadystatechange = null;
+                if (callback && typeof callback == "function") {
+                    callback(); //window[callback]();如果传递字符串过来 调用window['函数名']() 调用方法
+                }
+            }
+        };
+    }
+</script>
   
   <script src="https://yanziyuan.cn//media/scripts/tocScript.js"></script>
 </body>
